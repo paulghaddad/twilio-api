@@ -58,11 +58,11 @@ class TwilioServiceWrapper
       .create(phone_number_sid: number.sid)
   end
 
-  def send_message(message_service:, to_number:)
+  def send_message(message_service:, to_number:, body: 'My text message')
     client.messages.create(
       messaging_service_sid: message_service.sid,
       to: to_number,
-      body: 'Campaign Test'
+      body: body
   )
   end
 end
